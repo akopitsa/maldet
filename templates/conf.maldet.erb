@@ -13,7 +13,7 @@
 # alerts as well as automated/manual scan reports. On-demand reports
 # can still be sent using '--report SCANID user@domain.com'.
 # [0 = disabled, 1 = enabled]
-<% if @email_alert == true -%>
+<% if @email_alert -%>
 email_alert="1"
 <% end -%>
 
