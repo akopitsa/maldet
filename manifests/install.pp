@@ -22,15 +22,15 @@ class maldet::install inherits maldet {
   }
   exec { 'extract':
     cwd     => "/tmp",
-    command => "tar -xzvf maldetect-current.tar.gz",
+    command => "tar -xzvf maldetect-current.tar.gz -C /tmp/maldetect-current",
     require => File['/tmp/maldetect-current.tar.gz'],
     path    => ['/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'],
     alias   => 'extractmaldet',
   }
   exec { 'install-maldet':
-    command => "/tmp/maldet-*/install.sh",
+    command => "/tmp/maldetect-current/install.sh",
     path    => ['/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'],
-    cwd     => "/tmp/maldet-*",
+    cwd     => "/tmp/maldetect-current",
     require => Exec['extractmaldet'],
   }
   file {'/usr/local/maldetect/conf.maldet':
