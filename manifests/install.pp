@@ -25,7 +25,7 @@ class maldet::install inherits maldet {
     ensure => file,
     owner  => root,
     group  => root,
-    mode   => 0644,
+    mode   => '0644',
     content => template("maldet/conf.maldet.erb")
   }
 }
