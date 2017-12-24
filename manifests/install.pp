@@ -1,10 +1,7 @@
 # Class: install
 #
 #
-class maldet::install inherits maldet (
-  String $version = $maldet::version,
-  Boolean $email_alert = $maldet::email_alert,
-) {
+class maldet::install inherits maldet  {
   exec {'wget http://www.rfxn.com/downloads/maldetect-current.tar.gz':
     alias   => 'maldetlatest',
     cwd     => '/tmp',
