@@ -32,15 +32,15 @@ class maldet::install inherits maldet  {
     group  => root,
     mode   => '0644',
     content => template("maldet/conf.maldet.erb"),
-    alias => 'configfile'
+    alias => 'configfile',
   }
-  # file {"/tmp/maldetect-$version":
-  #   ensure => absent,
-  #   path => "/tmp/maldetect-$version",
-  #   recurse => true,
-  #   purge => true,
-  #   force => true,
-    
-  # }
+  file {"/tmp/maldetect-$version":
+    ensure => absent,
+    path => "/tmp/maldetect-$version",
+    recurse => true,
+    purge => true,
+    force => true,
+    require => File['configfile'],
+  }
   
 }
