@@ -1,9 +1,7 @@
 # Class: install
 #
 #
-class maldet::install (
-  String $version = $maldet::version,
-) {
+class maldet::install {
   # file { '/tmp/maldet.tar.gz':
   #   ensure => file,
   #   owner  => root,
