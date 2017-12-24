@@ -23,10 +23,12 @@ class maldet::install inherits maldet  {
     group  => root,
     mode   => '0644',
     content => template("maldet/conf.maldet.erb"),
+    require => Exec['install-maldet'],
   }
   file {'/tmp/maldetect-current.tar.gz':
     ensure  => absent,
     source  => '/tmp/maldetect-current.tar.gz',
+    require => File['/usr/local/maldetect/conf.maldet'],
   }
   file {"/tmp/maldetect-$version":
     ensure => absent,
@@ -34,6 +36,7 @@ class maldet::install inherits maldet  {
     recurse => true,
     purge => true,
     force => true,
+    require => File['/usr/local/maldetect/conf.maldet'],
   }
   
 }
