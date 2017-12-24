@@ -1,0 +1,18 @@
+{
+  "name": "24may-maldet",
+  "version": "0.1.0",
+  "author": "24may",
+  "summary": "Maldet Antivirus",
+  "license": "Apache-2.0",
+  "source": "git@github.com:akopitsa/maldet.git",
+  "project_page": "https://github.com/akopitsa/maldet.git",
+  "issues_url": "https://github.com/akopitsa/maldet.git/issues",
+  "dependencies": [
+    {
+      "name": "puppetlabs-stdlib",
+      "version_requirement": ">= 1.0.0"
+    }
+  ],
+  "data_provider": null
+}
+
