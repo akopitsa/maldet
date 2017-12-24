@@ -31,11 +31,11 @@ class maldet::install inherits maldet {
     require => File['/tmp/maldetect-current.tar.gz'],
     path    => ['/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'],
   }
-  file {'/usr/local/maldetect/conf.maldet':
-    ensure => file,
-    owner  => root,
-    group  => root,
-    mode   => '0644',
-    content => template("maldet/conf.maldet.erb")
-  }
+  # file {'/usr/local/maldetect/conf.maldet':
+  #   ensure => file,
+  #   owner  => root,
+  #   group  => root,
+  #   mode   => '0644',
+  #   content => template("maldet/conf.maldet.erb")
+  # }
 }
