@@ -1,9 +1,8 @@
 # Class: install
 #
 #
-class maldet::install inherits maldet (
-  String $version = $maldet::install::version,
-) {
+class maldet::install inherits maldet  {
+  $version = '1.5.2',
   # file { '/tmp/maldet.tar.gz':
   #   ensure => file,
   #   owner  => root,
