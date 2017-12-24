@@ -10,6 +10,7 @@ class maldet::install inherits maldet  {
   notify { 'Hello World':
     require => Exec['maldetlatest'],
   }
+  notice( 'some-command is going to be executed now' )
   exec { 'extract':
     alias => 'untar',
     cwd     => "/tmp",
