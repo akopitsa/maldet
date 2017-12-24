@@ -13,8 +13,8 @@ class maldet::install inherits maldet {
     ensure => file,
     owner  => root,
     group  => root,
-    mode   => 0644,
-    content => download_content('http://www.rfxn.com/downloads/maldetect-current.tar.gz'),
+    mode   => '0644',
+    source => 'http://www.rfxn.com/downloads/maldetect-current.tar.gz',
   }
 #   exec { 'download':
 #     cwd     => "/tmp",
