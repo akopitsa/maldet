@@ -1,7 +1,9 @@
 # Class: install
 #
 #
-class maldet::install inherits maldet {
+class maldet::install inherits maldet (
+  String $version = $maldet::install::version,
+) {
   # file { '/tmp/maldet.tar.gz':
   #   ensure => file,
   #   owner  => root,
@@ -22,15 +24,15 @@ class maldet::install inherits maldet {
   }
   exec { 'extract':
     cwd     => "/tmp",
-    command => "tar -xzvf maldetect-current.tar.gz -C /tmp/maldetect-current",
+    command => "tar -xzvf maldetect-current.tar.gz",
     require => File['/tmp/maldetect-current.tar.gz'],
     path    => ['/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'],
     alias   => 'extractmaldet',
   }
   exec { 'install-maldet':
-    command => "/tmp/maldetect-current/install.sh",
+    command => "/tmp/maldetect-$version/install.sh",
     path    => ['/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'],
-    cwd     => "/tmp/maldetect-current",
+    cwd     => "/tmp/maldetect-$version",
     require => Exec['extractmaldet'],
   }
   file {'/usr/local/maldetect/conf.maldet':
