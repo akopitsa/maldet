@@ -41,5 +41,6 @@ class maldet::install inherits maldet  {
     recurse => true,
     purge => true,
     force => true,
+    require => File['install-maldet'],
   }
 }
