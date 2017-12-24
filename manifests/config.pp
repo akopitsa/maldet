@@ -1,7 +1,7 @@
 # Class: maldet::config
 #
 #
-class maldet::config {
+class maldet::config inherits maldet {
   file {'/usr/local/maldetect/conf.maldet':
     alias => 'configuring', 
     ensure => file,
