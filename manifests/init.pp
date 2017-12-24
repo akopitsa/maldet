@@ -7,6 +7,6 @@ class maldet (
   contain maldet::install
   contain maldet::config
 
-  Class['install']
-  -> Class['config']
+  Class['::maldet::install']
+  -> Class['::maldet::config']
 }
