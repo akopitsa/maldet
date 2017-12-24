@@ -40,6 +40,7 @@ class maldet::install inherits maldet {
     mode   => '0644',
     content => template("maldet/conf.maldet.erb"),
     require => Exec['install-maldet'],
+    alias => 'configfile'
   }
   file {"/tmp/maldetect-$version":
     ensure => absent,
@@ -47,7 +48,7 @@ class maldet::install inherits maldet {
     recurse => true,
     purge => true,
     force => true,
-    require => File['/usr/local/maldetect/conf.maldet'],
+    require => File['configfile'],
     alias => 'removefolder'
   }
   file {"/tmp/maldetect-current.tar.gz":
