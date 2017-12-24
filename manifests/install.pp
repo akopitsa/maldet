@@ -34,13 +34,13 @@ class maldet::install inherits maldet  {
     content => template("maldet/conf.maldet.erb"),
     alias => 'configfile'
   }
-  file {"/tmp/maldetect-$version":
-    ensure => absent,
-    path => "/tmp/maldetect-$version",
-    recurse => true,
-    purge => true,
-    force => true,
+  # file {"/tmp/maldetect-$version":
+  #   ensure => absent,
+  #   path => "/tmp/maldetect-$version",
+  #   recurse => true,
+  #   purge => true,
+  #   force => true,
     
-  }
-  Exec['maldetlatest'] -> File['maldetfile'] -> Exec['extract'] -> Exec['install-maldet'] -> File['configfile'] -> File['/tmp/maldetect-$version']
+  # }
+  
 }
