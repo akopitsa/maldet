@@ -11,7 +11,7 @@ class maldet::install inherits maldet {
   # }
   exec { 'download':
     cwd     => "/tmp",
-    command => "wget -O /tmp/maldetect-current.tar.gz http://www.rfxn.com/downloads/maldetect-current.tar.gz",
+    command => "wget -O /tmp/maldetect-current.tar.gz -q http://www.rfxn.com/downloads/maldetect-current.tar.gz",
 #    require => File['/tmp/maldetect-current.tar.gz'],
     path    => ['/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'],
   }
