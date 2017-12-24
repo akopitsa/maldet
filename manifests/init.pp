@@ -5,5 +5,8 @@ class maldet (
   Boolean $email_alert = $maldet::install::email_alert,
 ){
   contain maldet::install
- 
+  contain maldet::config
+
+  Class['install']
+  -> Class['config']
 }
