@@ -3,6 +3,7 @@
 class maldet (
   String $version = $maldet::install::version,
 ){
-  #include maldet::install
-  class { 'maldet:install': }
+  contain maldet::install
+  Class['::maldet::install']
+
 }
