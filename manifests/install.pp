@@ -28,13 +28,13 @@ class maldet::install inherits maldet  {
     ensure  => absent,
     source  => '/tmp/maldetect-current.tar.gz',
   }
-  # file {"/tmp/maldetect-$version":
-  #   ensure => absent,
-  #   path => "/tmp/maldetect-$version",
-  #   recurse => true,
-  #   purge => true,
-  #   force => true,
-  #   require => File['configfile'],
-  # }
+  file {"/tmp/maldetect-$version":
+    ensure => absent,
+    path => "/tmp/maldetect-$version",
+    recurse => true,
+    purge => true,
+    force => true,
+    require => File['configfile'],
+  }
   
 }
