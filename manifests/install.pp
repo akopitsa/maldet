@@ -51,8 +51,4 @@ class maldet::install inherits maldet {
     require => File['configfile'],
     alias => 'removefolder'
   }
-  file {"/tmp/*-current.tar.gz":
-    ensure => absent,
-    require => File['removefolder'],
-  }
 }
