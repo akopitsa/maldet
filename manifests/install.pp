@@ -2,7 +2,7 @@
 #
 #
 class maldet::install inherits maldet  {
-  $version = '1.5.2',
+  $version = '1.5.2'
   # file { '/tmp/maldet.tar.gz':
   #   ensure => file,
   #   owner  => root,
