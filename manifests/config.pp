@@ -1,7 +1,9 @@
 # Class: maldet::config
 #
 #
-class maldet::config inherits maldet {
+class maldet::config (
+  Boolean $email_alert = $maldet::email_alert,
+) inherits maldet {
   file {'/usr/local/maldetect/conf.maldet':
     alias => 'configuring', 
     ensure => file,
