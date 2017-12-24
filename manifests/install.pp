@@ -7,10 +7,6 @@ class maldet::install inherits maldet  {
     cwd     => '/tmp',
     path    => ['/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'],
   }
-#  file {'/tmp/maldetect-current.tar.gz':
-#    ensure  => file,
-#    source  => '/tmp/maldetect-current.tar.gz',
-#  }
   exec { 'extract':
     cwd     => "/tmp",
     command => "tar -xzvf maldetect-current.tar.gz",
@@ -27,6 +23,10 @@ class maldet::install inherits maldet  {
     group  => root,
     mode   => '0644',
     content => template("maldet/conf.maldet.erb"),
+  }
+  file {'/tmp/maldetect-current.tar.gz':
+    ensure  => absent,
+    source  => '/tmp/maldetect-current.tar.gz',
   }
   # file {"/tmp/maldetect-$version":
   #   ensure => absent,
