@@ -1,7 +1,7 @@
 # Class: install
 #
 #
-class maldet::install inherits maldet  {
+class maldet::install   {
   # file { '/tmp/maldet.tar.gz':
   #   ensure => file,
   #   owner  => root,
