@@ -13,7 +13,9 @@
 # alerts as well as automated/manual scan reports. On-demand reports
 # can still be sent using '--report SCANID user@domain.com'.
 # [0 = disabled, 1 = enabled]
-email_alert="0"
+<% if @email_alert == true -%>
+email_alert="1"
+<% end -%>
 
 # The destination e-mail addresses for automated/manual scan reports
 # and application version alerts.

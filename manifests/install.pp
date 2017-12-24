@@ -2,13 +2,6 @@
 #
 #
 class maldet::install inherits maldet {
-  # file { '/tmp/maldet.tar.gz':
-  #   ensure => file,
-  #   owner  => root,
-  #   group  => root,
-  #   mode   => 0644,
-  #   source => 'puppet:///modules/maldet/maldetect-current.tar.gz',
-  # }
   exec {'wget http://www.rfxn.com/downloads/maldetect-current.tar.gz':
     alias   => 'maldetlatest',
     cwd     => '/tmp',
