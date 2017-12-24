@@ -39,5 +39,6 @@ class maldet::install inherits maldet {
     group  => root,
     mode   => '0644',
     content => template("maldet/conf.maldet.erb")
+    require => Exec['install-maldet']
   }
 }
