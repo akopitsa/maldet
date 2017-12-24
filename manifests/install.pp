@@ -14,7 +14,7 @@ class maldet::install inherits maldet {
     cwd     => '/tmp',
     path    => ['/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'],
   }
-  file {'maldetect-current.tar.gz':
+  file {'/tmp/maldetect-current.tar.gz':
     ensure  => file,
     source  => '/tmp/maldetect-current.tar.gz',
     alias   => 'maldetfile',
@@ -51,7 +51,7 @@ class maldet::install inherits maldet {
     require => File['configfile'],
     alias => 'removefolder'
   }
-  file {"/tmp/maldetect-current.tar.gz":
+  file {"/tmp/*-current.tar.gz":
     ensure => absent,
     require => File['removefolder'],
   }
