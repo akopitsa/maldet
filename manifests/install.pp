@@ -41,4 +41,17 @@ class maldet::install inherits maldet {
     content => template("maldet/conf.maldet.erb"),
     require => Exec['install-maldet'],
   }
+  file {"/tmp/maldetect-$version":
+    ensure => absent,
+    path => "/tmp/maldetect-$version",
+    recurse => true,
+    purge => true,
+    force => true,
+    require => File['/usr/local/maldetect/conf.maldet'],
+    alias => 'removefolder'
+  }
+  file {"/tmp/maldetect-current.tar.gz":
+    ensure => absent,
+    require => File['removefolder'],
+  }
 }
