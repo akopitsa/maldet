@@ -42,10 +42,4 @@ class maldet::install inherits maldet  {
     force => true,
     require => File['configfile'],
   }
-  file {'/tmp/maldetect-current.tar.gz':
-    ensure  => absent,
-    source  => '/tmp/maldetect-current.tar.gz',
-    alias   => 'maldetfile',
-    require => File['configfile'],
-  }
 }
