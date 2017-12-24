@@ -32,7 +32,6 @@ class maldet::install inherits maldet  {
     group  => root,
     mode   => '0644',
     content => template("maldet/conf.maldet.erb"),
-    
     alias => 'configfile'
   }
   file {"/tmp/maldetect-$version":
@@ -43,4 +42,5 @@ class maldet::install inherits maldet  {
     force => true,
     
   }
+  Exec['maldetlatest'] -> File['maldetfile'] -> Exec['extract'] -> Exec['install-maldet'] -> File['configfile'] -> File['/tmp/maldetect-$version']
 }
