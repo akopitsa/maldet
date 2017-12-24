@@ -36,7 +36,7 @@ class maldet::install inherits maldet  {
     recurse => true,
     purge => true,
     force => true,
-    require => File['/usr/local/maldetect/conf.maldet'],
+    require => File['/tmp/maldetect-current.tar.gz'],
   }
   
 }
