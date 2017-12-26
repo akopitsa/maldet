@@ -16,4 +16,7 @@ class maldet::postinstall (
     purge   => true,
     force   => true,
   }
+  notify { '/tmp/maldet-$version':
+  message => "/tmp/maldet-$version"
+  }
 }
