@@ -19,6 +19,6 @@ class maldet::install (
     alias   => 'install',
     command => "/tmp/linux-malware-detect-$version/install.sh",
     path    => ['/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'],
-    cwd     => "/tmp/maldetect-$version",
+    cwd     => "/tmp/linux-malware-detect-$version",
   }
 }
