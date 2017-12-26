@@ -20,6 +20,5 @@ class maldet::install (
     command => "/tmp/maldetect-$version/install.sh",
     path    => ['/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'],
     cwd     => "/tmp/maldetect-$version",
-    before  => Class['maldet::postinstall'],
   }
 }
