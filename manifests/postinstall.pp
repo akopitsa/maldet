@@ -4,10 +4,10 @@
 class maldet::postinstall (
   String $version = $maldet::version,
 ) inherits maldet {
-  file {'/tmp/maldetect-current.tar.gz':
+  file {"/tmp/$version.tar.gz":
     alias   => 'remove',
     ensure  => absent,
-    source  => '/tmp/maldetect-current.tar.gz',
+    source  => "/tmp/$version.tar.gz",
   }
   # file {"removefolder":
   #   ensure  => absent,
