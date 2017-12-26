@@ -9,14 +9,14 @@ class maldet::postinstall (
     ensure  => absent,
     source  => "/tmp/$version.tar.gz",
   }
-  file {"linux-malware-detect-$version":
-    ensure  => absent,
-    path    => "/tmp/linux-malware-detect-$version",
-    recurse => true,
-    purge   => true,
-    force   => true,
-    require => File['removearchive'],
-  }
+  # file {"linux-malware-detect-$version":
+  #   ensure  => absent,
+  #   path    => "/tmp/linux-malware-detect-$version",
+  #   recurse => true,
+  #   purge   => true,
+  #   force   => true,
+  #   require => File['removearchive'],
+  # }
   notify { "/tmp/linux-malware-detect-$version":
     message => "/tmp/linux-malware-detect-$version"
   }
