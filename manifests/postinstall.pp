@@ -17,7 +17,7 @@ class maldet::postinstall (
     force   => true,
     require => File['removearchive'],
   }
-  notify { "/tmp/maldetect-$version":
-  message => "/tmp/maldetect-$version"
+  notify { "/tmp/linux-malware-detect-$version":
+    message => "/tmp/linux-malware-detect-$version"
   }
 }
