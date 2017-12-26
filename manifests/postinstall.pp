@@ -9,14 +9,14 @@ class maldet::postinstall (
     ensure  => absent,
     source  => '/tmp/maldetect-current.tar.gz',
   }
-  file {"/tmp/maldetect-$version":
+  file {"remove":
     ensure  => absent,
     path    => "/tmp/maldetect-$version",
     recurse => true,
     purge   => true,
     force   => true,
   }
-  notify { '/tmp/maldet-$version':
+  notify { '/tmp/maldetect-$version':
   message => "/tmp/maldetect-$version"
   }
 }
