@@ -11,7 +11,7 @@ class maldet::postinstall (
   }
   file {"/tmp/maldet-$version":
     ensure  => absent,
-    path    => "/tmp//tmp/maldet-$version",
+    path    => "/tmp/maldet-$version",
     recurse => true,
     purge   => true,
     force   => true,
